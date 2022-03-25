@@ -1,0 +1,21 @@
+get-all-user:
+  handler: src/lambdas/user/getAllUser.getAllUser
+  name: ${sls:stage}-users
+  description: lambda para obtener los usuarios de la base de datos
+  tags:
+    foo: tienda
+  # vpc:
+  #   securityGroupIds:
+  #     - sg-05be7d5627db4f843
+  #   subnetIds:
+  #     - subnet-09f082b49b5aa648f
+  #     - subnet-09d1bfa1d7607ee89
+  #     - subnet-0920920ecd1b81c0f
+  #     - subnet-03b8dc18b99b3b207
+  #     - subnet-0c88cac82aa79ef38
+  #     - subnet-0805eabeae3ac4559
+  events:
+    - http:
+        method: GET
+        path: /users
+        cors: true

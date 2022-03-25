@@ -1,0 +1,27 @@
+service: Tienda
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+
+plugins:
+  - serverless-offline
+
+environment: "${file(variables.yml)}"
+
+functions:
+  # Archivo de apis
+  "${file(all.api.yml)}" #
+
+package:
+  individually: true
+  patterns:
+    - "!node_modules/**"
+    - "!Layers/**"
+    - "!config"
+    - "!.serverless"
+    - "config/**"
+    - "!variables.yml"

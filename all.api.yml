@@ -1,0 +1,3 @@
+###  Ejemplo de exportar  las lambdas su carpeta
+
+- "${file(src/lambdas/user/user.lambda.yml)}"

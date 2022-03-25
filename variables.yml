@@ -1,0 +1,6 @@
+DB_DIALECT: "mariadb"
+DB_NAME: "tienda-db"
+DB_USERNAME: "root"
+DB_PASSWORD: ""
+DB_HOST: "127.0.0.1" #!GetAtt myDB.Endpoint.Address
+DB_PORT: "3306"
