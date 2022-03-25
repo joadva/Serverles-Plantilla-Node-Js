@@ -7,6 +7,7 @@ const { where } = require("sequelize/types");
 const getAll = async (model) => {
   console.log("model", model);
   const getResponse = await model.findAll();
+  console.log(getResponse);
 
   return getResponse;
 };
