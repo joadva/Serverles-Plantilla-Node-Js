@@ -2,8 +2,6 @@
  * @description Funciones para Sequelize.
  */
 
-const { where } = require("sequelize/types");
-
 const getAll = async (model) => {
   console.log("model", model);
   const getResponse = await model.findAll();
@@ -12,10 +10,15 @@ const getAll = async (model) => {
   return getResponse;
 };
 
-const getById = async (model, id) => {
+const getByPk = async (model, pk) => {
+  const getResponse = await model.findByPk(pk);
+  return getResponse;
+};
+
+const getByColumn = async (model, column) => {
   const getResponse = await model.findOne({
     where: {
-      id_usuario,
+      column,
     },
   });
   return getResponse;
@@ -23,5 +26,6 @@ const getById = async (model, id) => {
 
 module.exports = {
   getAll,
-  getById,
+  getByPk,
+  getByColumn,
 };

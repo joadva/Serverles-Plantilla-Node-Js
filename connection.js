@@ -1,14 +1,20 @@
 const { Sequelize } = require("sequelize");
 
 const db = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
+  "tienda-db",
+  "root",
+  "",
   {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    dialectModule: require(process.env.DB_DIALECT),
+    host: "127.0.0.1",
+    dialect: "mariadb",
   }
+  // process.env.DB_NAME,
+  // process.env.DB_USERNAME,
+  // process.env.DB_PASSWORD,
+  // {
+  //   host: process.env.DB_HOST,
+  //   dialect: process.env.DB_DIALECT,
+  // }
 );
 
 // Async query handler

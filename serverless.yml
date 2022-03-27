@@ -10,7 +10,8 @@ provider:
 plugins:
   - serverless-offline
 
-environment: "${file(variables.yml)}"
+environment:
+  - "${file(variables.yml)}"
 
 functions:
   # Archivo de apis
