@@ -63,3 +63,69 @@ get-by-pk-user:
         method: GET
         path: /users/{id}
         cors: true
+
+update-by-pk-user:
+  handler: src/lambdas/user/updateUser.updateByPrimaryKey
+  name: ${sls:stage}-users
+  description: lambda para editar un usuario por Pk de la base de datos
+  tags:
+    foo: tienda
+  # vpc:
+  #   securityGroupIds:
+  #     - sg-05be7d5627db4f843
+  #   subnetIds:
+  #     - subnet-09f082b49b5aa648f
+  #     - subnet-09d1bfa1d7607ee89
+  #     - subnet-0920920ecd1b81c0f
+  #     - subnet-03b8dc18b99b3b207
+  #     - subnet-0c88cac82aa79ef38
+  #     - subnet-0805eabeae3ac4559
+  events:
+    - http:
+        method: PUT
+        path: /users/{id}
+        cors: true
+
+delete-by-pk-user:
+  handler: src/lambdas/user/deleteLogic.deleteLogicUser
+  name: ${sls:stage}-users
+  description: lambda para eliminar un usuario por Pk de la base de datos
+  tags:
+    foo: tienda
+  # vpc:
+  #   securityGroupIds:
+  #     - sg-05be7d5627db4f843
+  #   subnetIds:
+  #     - subnet-09f082b49b5aa648f
+  #     - subnet-09d1bfa1d7607ee89
+  #     - subnet-0920920ecd1b81c0f
+  #     - subnet-03b8dc18b99b3b207
+  #     - subnet-0c88cac82aa79ef38
+  #     - subnet-0805eabeae3ac4559
+  events:
+    - http:
+        method: DELETE
+        path: /users/{id}
+        cors: true
+
+restore-by-pk-user:
+  handler: src/lambdas/user/restoreUser.restoreUser
+  name: ${sls:stage}-users
+  description: lambda para restaurar un usuario por Pk de la base de datos
+  tags:
+    foo: tienda
+  # vpc:
+  #   securityGroupIds:
+  #     - sg-05be7d5627db4f843
+  #   subnetIds:
+  #     - subnet-09f082b49b5aa648f
+  #     - subnet-09d1bfa1d7607ee89
+  #     - subnet-0920920ecd1b81c0f
+  #     - subnet-03b8dc18b99b3b207
+  #     - subnet-0c88cac82aa79ef38
+  #     - subnet-0805eabeae3ac4559
+  events:
+    - http:
+          method: POST
+        path: /users/{id}
+        cors: true

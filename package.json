@@ -4,7 +4,8 @@
   "description": "Plantilla Con ejemplos de CRUD en Sequelize,Mariadb",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn run jest",
+    "migration": "npx sequelize-cli db:migrate"
   },
   "keywords": [],
   "author": "",

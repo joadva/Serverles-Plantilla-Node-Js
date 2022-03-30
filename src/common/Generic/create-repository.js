@@ -3,9 +3,8 @@
  */
 
 const create = async (model, data) => {
-  console.log("datos que entran", model, data);
   const getReponse = await model.create(data);
   return getReponse;
 };
 
-module.exports = create;
+module.exports = { create };

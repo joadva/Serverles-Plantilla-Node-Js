@@ -2,7 +2,7 @@
  * Helpers para acortar condigo de respuesta ocupando un helper
  */
 
-const { generateResponse } = require("./generateResponse");
+const { generateResponse } = require("../generateResponse");
 
 function generateError(message, errors) {
   return generateResponse(422, {

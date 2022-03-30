@@ -1,5 +1,5 @@
 {
-  "local": {
+  "development": {
     "username": "root",
     "password": "",
     "database": "tienda-db",

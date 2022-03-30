@@ -1,4 +1,4 @@
-const { Sequelize, Model, DataTypes } = require("Sequelize");
+const { Sequelize, DataTypes } = require("Sequelize");
 const sequelize = new Sequelize("mariadb::memory");
 const { db } = require("../connection");
 
@@ -44,6 +44,7 @@ const Usuarios = db.define(
   },
   {
     timestamps: true,
+    paranoid: true,
     charset: "utf8",
     collate: "utf8_general_ci",
     sequelize,

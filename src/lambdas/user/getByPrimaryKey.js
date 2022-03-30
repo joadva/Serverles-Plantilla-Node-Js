@@ -7,11 +7,11 @@
 "use strict";
 
 const { Usuarios } = require("../../../models/usuarios");
-const { getByPk } = require("../../db-repository/Generic/get-all-repository");
+const { getByPk } = require("../../common/Generic/get-all-repository");
 const {
   generateSuccess,
   generateCatch,
-} = require("../../helpers/errorGenerate");
+} = require("../../common/helpers/errorGenerate");
 
 /**
  * @name funcition de sequelize para obtener todo los datos
@@ -21,7 +21,6 @@ const {
 const getByPrimaryKey = async (event) => {
   try {
     const { id } = event.pathParameters;
-    console.log("obtener el id", id);
     const response = await getByPk(Usuarios, id);
     return generateSuccess("Dato obtenido", response);
   } catch (e) {
